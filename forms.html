@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Формы</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a id="top"></a>
+<header><nav><ul>
+<li><a href="index.html" title="На главную"><img src="images/logo.png" alt="Логотип: на главную" width="40" height="40"></a></li>
+<li><a href="index.html">Главная</a></li>
+<li><a href="history.html">История кофе</a></li>
+<li><a href="brewing.html">Заваривание</a></li>
+<li><a href="menu.html">Меню</a></li>
+<li><a href="forms.html" class="current" aria-current="page">Формы</a></li>
+<li><a href="menu.html#prices">Цены (закладка)</a></li>
+<li class="sep"></li>
+<li><a href="dom_read.html">DOM_JS: чтение</a></li>
+<li><a href="dom_latin.html">Кириллица → латиница</a></li>
+<li><a href="task.html">Алгоритмическая задача</a></li>
+<li class="sep"></li>
+<li><a href="https://ru.wikipedia.org/wiki/Кофе" target="_blank" rel="noopener noreferrer">Википедия ↗</a></li>
+</ul></nav></header>
+<main>
+
+<h1>Формы: контакты и заказ</h1>
+<div class="pagenav"><a href="#contact">Форма 1: контакты</a> | <a href="#order">Форма 2: заказ</a> | <a href="#top">К началу ↑</a></div>
+
+<h2 id="contact">Форма 1. Контактные данные</h2>
+<form action="https://httpbin.org/post" method="post" target="_blank">
+<ul style="list-style:none;padding:0">
+<li><label for="familiya">Фамилия:</label><input type="text" id="familiya" name="familiya" value="Иванов" required></li>
+<li><label for="imya">Имя:</label><input type="text" id="imya" name="imya" value="Иван" required></li>
+<li><label for="gruppa">Группа:</label><input type="text" id="gruppa" name="gruppa" value="Группа-01" required></li>
+<li><label for="telefon">Мобильный телефон:</label><input type="tel" id="telefon" name="telefon" value="+7 900 000-00-00" required></li>
+<li><label for="email">Электронная почта:</label><input type="email" id="email" name="email" value="ivanov@example.com" required></li>
+<li><label for="data_otpravki">Дата отправки:</label><input type="date" id="data_otpravki" name="data_otpravki"></li>
+</ul>
+<input type="submit" value="Отправить контакты">
+</form>
+
+<h2 id="order">Форма 2. Заказ кофе</h2>
+<form action="https://httpbin.org/post" method="post" target="_blank">
+<input type="hidden" name="shop_id" value="zerno-001">
+<input type="hidden" name="order_source" value="website">
+<ul style="list-style:none;padding:0">
+<li><label for="customer_name">Имя заказчика:</label><input type="text" id="customer_name" name="customer_name" value="Иван" required></li>
+<li><label for="cups">Количество чашек:</label><input type="number" id="cups" name="cups" value="1" min="1" max="20"></li>
+<li><fieldset><legend>Напиток</legend>
+<label><input type="radio" name="drink" value="espresso" checked> Эспрессо</label>
+<label><input type="radio" name="drink" value="americano"> Американо</label>
+<label><input type="radio" name="drink" value="cappuccino"> Капучино</label>
+<label><input type="radio" name="drink" value="latte"> Латте</label>
+</fieldset></li>
+<li><fieldset><legend>Добавки</legend>
+<label><input type="checkbox" name="extras" value="sugar" checked> Сахар</label>
+<label><input type="checkbox" name="extras" value="syrup"> Сироп</label>
+<label><input type="checkbox" name="extras" value="cinnamon"> Корица</label>
+</fieldset></li>
+<li><label for="pickup_date">Дата получения:</label><input type="date" id="pickup_date" name="pickup_date" value="2026-10-21"></li>
+<li><label for="order_pin">PIN-код заказа:</label><input type="password" id="order_pin" name="order_pin" value="1234"></li>
+</ul>
+<input type="submit" value="Оформить заказ"> <input type="reset" value="Сбросить">
+</form>
+<div class="pagenav"><a href="#top">К началу ↑</a></div>
+
+</main>
+<footer>Учебный сайт «Зерно» · контрольная работа по программированию · 2026</footer>
+<script>
+// подставляем сегодняшнюю дату в поле «Дата отправки»
+document.getElementById('data_otpravki').value = new Date().toISOString().slice(0, 10);
+</script>
+</body>
+</html>

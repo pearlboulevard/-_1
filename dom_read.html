@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOM_JS. Считываем информацию из DOM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a id="top"></a>
+<header><nav><ul>
+<li><a href="index.html" title="На главную"><img src="images/logo.png" alt="Логотип: на главную" width="40" height="40"></a></li>
+<li><a href="index.html">Главная</a></li>
+<li><a href="history.html">История кофе</a></li>
+<li><a href="brewing.html">Заваривание</a></li>
+<li><a href="menu.html">Меню</a></li>
+<li><a href="forms.html">Формы</a></li>
+<li><a href="menu.html#prices">Цены (закладка)</a></li>
+<li class="sep"></li>
+<li><a href="dom_read.html" class="current" aria-current="page">DOM_JS: чтение</a></li>
+<li><a href="dom_latin.html">Кириллица → латиница</a></li>
+<li><a href="task.html">Алгоритмическая задача</a></li>
+<li class="sep"></li>
+<li><a href="https://ru.wikipedia.org/wiki/Кофе" target="_blank" rel="noopener noreferrer">Википедия ↗</a></li>
+</ul></nav></header>
+<main>
+
+<h1>DOM_JS. Считываем информацию из DOM</h1>
+<div>Ниже — вторая и третья страницы паспорта (учебные данные). Откройте инструменты разработчика (F12 → Console) и считайте данные из DOM.</div>
+
+<div class="passport" id="page2">
+<h2>Страница 2 паспорта</h2>
+<p>Паспорт выдан: <span id="issuer">ГУ МВД России по г. Москве</span></p>
+<p>Дата выдачи: <span id="issued">15.03.2019</span></p>
+<p>Фамилия: <span id="surname">Иванов</span></p>
+<p>Имя: <span id="name">Иван</span></p>
+<p>Отчество: <span id="patronymic">Иванович</span></p>
+<p>Пол: <span id="sex">муж.</span></p>
+<p>Дата рождения: <span id="birth">12.03.2005</span></p>
+<p>Место рождения: <span id="birthplace">г. Москва</span></p>
+</div>
+
+<div class="passport" id="page3">
+<h2>Страница 3 паспорта</h2>
+<p>Код подразделения: <span id="code">770-001</span></p>
+<p>Серия и номер: <span id="series">45 19 123456</span></p>
+<p>Адрес регистрации: <span id="address">г. Москва, ул. Тверская, д. 1, кв. 1</span></p>
+<p>Дата регистрации: <span id="regdate">20.03.2019</span></p>
+</div>
+
+<h2>Команды для консоли</h2>
+<pre>document.getElementsByTagName('p')[2].childNodes[1].innerText      // фамилия
+document.getElementsByTagName('p')[3].childNodes[1].innerText      // имя
+document.getElementsByTagName('p')[6].childNodes[1].innerText.slice(-4)   // год рождения</pre>
+<h2>Скриншот результата</h2>
+<p><img src="images/screenshot_dom.png" alt="Скриншот консоли браузера с результатами" width="800"></p>
+
+</main>
+<footer>Учебный сайт «Зерно» · контрольная работа по программированию · 2026</footer>
+</body>
+</html>

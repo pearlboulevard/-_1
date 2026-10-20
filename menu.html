@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Меню и цены</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a id="top"></a>
+<header><nav><ul>
+<li><a href="index.html" title="На главную"><img src="images/logo.png" alt="Логотип: на главную" width="40" height="40"></a></li>
+<li><a href="index.html">Главная</a></li>
+<li><a href="history.html">История кофе</a></li>
+<li><a href="brewing.html">Заваривание</a></li>
+<li><a href="menu.html" class="current" aria-current="page">Меню</a></li>
+<li><a href="forms.html">Формы</a></li>
+<li><a href="menu.html#prices">Цены (закладка)</a></li>
+<li class="sep"></li>
+<li><a href="dom_read.html">DOM_JS: чтение</a></li>
+<li><a href="dom_latin.html">Кириллица → латиница</a></li>
+<li><a href="task.html">Алгоритмическая задача</a></li>
+<li class="sep"></li>
+<li><a href="https://ru.wikipedia.org/wiki/Кофе" target="_blank" rel="noopener noreferrer">Википедия ↗</a></li>
+</ul></nav></header>
+<main>
+
+<h1>Меню и цены</h1>
+<div class="pagenav">Навигация по странице:
+<a href="#sec1">Раздел 1: Что мы готовим</a> |
+<a href="#sec2">Раздел 2: Прайс-лист</a> |
+<a href="#top">К началу ↑</a></div>
+
+<p>Мы готовим напитки из свежеобжаренных зёрен арабики. Цены указаны за порцию 200 мл.</p>
+
+<h2 id="sec1">Раздел 1. Что мы готовим</h2>
+<h3>Нумерованный список</h3>
+<ol><li>Выберите напиток.</li><li>Выберите добавки.</li><li>Оформите заказ на странице «Формы».</li></ol>
+<h3>Ненумерованный список с вложенными пунктами</h3>
+<ul><li>Классика<ul><li>Эспрессо</li><li>Американо</li></ul></li><li>С молоком<ul><li>Капучино</li><li>Латте</li><li>Флэт уайт</li></ul></li></ul>
+
+<figure>
+<img src="images/fig_grinder.jpg" alt="Ручная кофемолка" width="300" height="200">
+<figcaption><b>Ручная кофемолка</b><br>Свежий помол — главный секрет ароматного напитка.</figcaption>
+</figure>
+
+<p class="thumbs">Миниатюра (щёлкните, чтобы открыть изображение 600×400 в новой вкладке):<br>
+<a href="images/big_4.jpg" target="_blank" rel="noopener" title="Открыть 600×400 в новой вкладке"><img src="images/thumb_4.jpg" alt="Миниатюра: френч-пресс" width="100"></a></p>
+<div class="pagenav"><a href="#sec2">Раздел 2 ↓</a> | <a href="#top">К началу ↑</a></div>
+
+<h2 id="sec2">Раздел 2. Прайс-лист</h2>
+<table class="info" style="background-image:url(images/bg_table.jpg)">
+<caption>Прайс-лист</caption>
+<tr><th>Что</th><th>Подробности</th><th>Ссылка / изображение</th></tr>
+<tr><td>Эспрессо</td><td><a id="prices"></a>120 ₽</td><td>Классика</td></tr><tr><td>Американо</td><td>150 ₽</td><td>Эспрессо + вода</td></tr><tr><td>Капучино</td><td>190 ₽</td><td><a href="forms.html#order">заказать</a></td></tr>
+<tr><td colspan="2">Изображение внутри ячейки таблицы:</td><td><img src="images/cell.jpg" alt="Чашка кофе в ячейке" width="120" height="80"></td></tr>
+</table>
+<div class="pagenav"><a href="#sec1">↑ Раздел 1</a> | <a href="#top">К началу ↑</a></div>
+
+</main>
+<footer>Учебный сайт «Зерно» · контрольная работа по программированию · 2026</footer>
+</body>
+</html>

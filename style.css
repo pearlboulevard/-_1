@@ -1,0 +1,38 @@
+/* ===== Общие стили сайта «Зерно» ===== */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.55; color: #2e2118; background: #faf4ea; }
+header { background: #3b2416; padding: 8px 16px; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+nav a { display: block; padding: 8px 12px; color: #f5e6cd; text-decoration: none; border-radius: 6px; }
+nav a:hover { background: #5c3a24; }
+nav a.current { background: #d9a05b; color: #2a1a0f; font-weight: bold; }   /* текущая страница */
+nav img { display: block; width: 40px; height: 40px; }
+nav .sep { width: 1px; height: 26px; background: #6e4a32; margin: 0 6px; }
+main { max-width: 960px; margin: 0 auto; padding: 20px 16px 40px; }
+h1 { color: #4a2c1a; border-bottom: 3px solid #d9a05b; padding-bottom: 6px; }
+h2 { color: #6b3f22; margin-top: 32px; }
+.pagenav { background: #efe0c8; padding: 8px 12px; border-radius: 6px; margin: 12px 0; }
+.pagenav a { color: #6b3f22; font-weight: bold; margin: 0 6px; }
+figure { display: inline-block; margin: 8px 18px 8px 0; vertical-align: top; max-width: 320px; }
+figure img { display: block; border: 2px solid #c9a26b; }
+figcaption { font-size: 0.9em; color: #5d4636; }
+.thumbs a { display: inline-block; margin-right: 10px; }
+.thumbs img { border: 2px solid #c9a26b; }
+table.info { border-collapse: collapse; width: 100%; background-color: #f6ecdb; background-repeat: repeat; }
+table.info th, table.info td { border: 1px solid #a98255; padding: 8px 10px; vertical-align: middle; }
+table.info th { background: rgba(92, 58, 36, 0.88); color: #fff; }
+table.info td { background: rgba(255, 250, 240, 0.72); }
+.passport { background: #fff; border: 2px solid #8b6b4a; border-radius: 8px; padding: 6px 18px 14px; margin: 14px 0; max-width: 560px; }
+.passport h2 { margin: 10px 0; }
+.passport p { margin: 6px 0; }
+.passport span { font-weight: bold; }
+button, input[type=button], input[type=submit], input[type=reset] { background: #5c3a24; color: #fff; border: 0; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 1em; }
+button:hover, input[type=button]:hover, input[type=submit]:hover { background: #7a4d30; }
+form { background: #fff; border: 1px solid #d5bd96; border-radius: 8px; padding: 12px 20px; margin: 12px 0; }
+fieldset { border: 1px solid #d5bd96; margin: 10px 0; }
+label { display: inline-block; min-width: 190px; }
+form li { margin: 8px 0; }
+.ok { color: #1f7a3a; font-weight: bold; } .bad { color: #a62a1e; font-weight: bold; }
+footer { text-align: center; color: #7b6552; padding: 16px; border-top: 1px solid #e0cfae; }
+code { background: #efe3cf; padding: 2px 5px; border-radius: 4px; }
+pre { background: #2b2b2b; color: #e6e6e6; padding: 12px; border-radius: 6px; overflow-x: auto; }
