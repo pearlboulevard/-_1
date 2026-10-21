@@ -1,63 +1,42 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Кофейня «Зерно» — всё о кофе</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<a id="top"></a>
-<header><nav><ul>
-<li><a href="index.html" class="current" title="На главную"><img src="images/logo.png" alt="Логотип: на главную" width="40" height="40"></a></li>
-<li><a href="index.html" class="current" aria-current="page">Главная</a></li>
-<li><a href="history.html">История кофе</a></li>
-<li><a href="brewing.html">Заваривание</a></li>
-<li><a href="menu.html">Меню</a></li>
-<li><a href="forms.html">Формы</a></li>
-<li><a href="menu.html#prices">Цены (закладка)</a></li>
-<li class="sep"></li>
-<li><a href="dom_read.html">DOM_JS: чтение</a></li>
-<li><a href="dom_latin.html">Кириллица → латиница</a></li>
-<li><a href="task.html">Алгоритмическая задача</a></li>
-<li class="sep"></li>
-<li><a href="https://ru.wikipedia.org/wiki/Кофе" target="_blank" rel="noopener noreferrer">Википедия ↗</a></li>
-</ul></nav></header>
-<main>
+// Страница «Решение алгоритмической задачи».
+// Задача 1002: дано вещественное число. Определить, какое это число: положительное, отрицательное, ноль.
 
-<h1>Кофейня «Зерно» — всё о кофе</h1>
-<div class="pagenav">Навигация по странице:
-<a href="#sec1">Раздел 1: О сайте</a> |
-<a href="#sec2">Раздел 2: Карта сайта</a> |
-<a href="#top">К началу ↑</a></div>
+var TASK_TEXT = 'Дано вещественное число. Определить, какое это число: положительное, отрицательное, ноль.';
+var NOT_DEFINED = 'не определен';
 
-<p>Добро пожаловать на учебный сайт о кофе. Здесь можно узнать историю напитка, освоить способы заваривания, изучить меню и оформить заказ через форму.</p>
+var form = document.getElementById('UserEnter');
+var fieldsBox = document.getElementById('fields');
+var resultInput = document.getElementById('result');
 
-<h2 id="sec1">Раздел 1. О сайте</h2>
-<h3>Последовательность действий на сайте</h3>
-<ol><li>Выберите нужный раздел в верхнем меню.</li><li>Прочитайте информацию на странице.</li><li>Оформите заказ на странице «Формы».</li><li>Оставьте свои контактные данные.</li></ol>
-<h3>Навигация</h3>
-<ul><li>Разделы сайта<ul><li>История кофе</li><li>Способы заваривания</li><li>Меню и цены</li></ul></li><li>Практические задания<ul><li>Работа с DOM</li><li>Транслитерация по клику</li><li>Алгоритмическая задача</li></ul></li></ul>
+// Показываем формулировку и поле для ввода числа
+document.getElementById('task').value = TASK_TEXT;
+fieldsBox.innerHTML = '<li><label for="x">Число X: </label><input id="x" name="x" type="number" step="any" value="-5"></li>';
+resultInput.value = NOT_DEFINED;
 
-<figure>
-<img src="images/fig_cup.jpg" alt="Чашка эспрессо на блюдце" width="300" height="200">
-<figcaption><b>Эспрессо</b><br>Крепкий напиток объёмом около 30 мл — основа большинства кофейных напитков.</figcaption>
-</figure>
+// Решение задачи
+function solve(x) {
+  if (x > 0) return 'положительное';
+  if (x < 0) return 'отрицательное';
+  return 'ноль';
+}
 
-<p class="thumbs">Миниатюра (щёлкните, чтобы открыть изображение 600×400 в новой вкладке):<br>
-<a href="images/big_1.jpg" target="_blank" rel="noopener" title="Открыть 600×400 в новой вкладке"><img src="images/thumb_1.jpg" alt="Миниатюра: эспрессо" width="100"></a></p>
-<div class="pagenav"><a href="#sec2">Раздел 2 ↓</a> | <a href="#top">К началу ↑</a></div>
+// Действие 1: «Проверить» — читаем число и выводим результат
+function verify() {
+  var raw = document.getElementById('x').value;
+  var x = parseFloat(raw);
+  if (raw === '' || isNaN(x)) {
+    resultInput.value = 'введите число';
+    return false;
+  }
+  resultInput.value = solve(x);
+  return true;
+}
 
-<h2 id="sec2">Раздел 2. Карта сайта</h2>
-<table class="info" style="background-image:url(images/bg_table.jpg)">
-<caption>Карта сайта</caption>
-<tr><th>Что</th><th>Подробности</th><th>Ссылка / изображение</th></tr>
-<tr><td>История</td><td>Откуда пришёл кофе</td><td><a href="history.html">перейти</a></td></tr><tr><td>Заваривание</td><td>Пять популярных способов</td><td><a href="brewing.html">перейти</a></td></tr><tr><td>Меню</td><td>Напитки и цены</td><td><a href="menu.html#prices">к ценам (закладка)</a></td></tr><tr><td>Формы</td><td>Контакты и заказ</td><td><a href="forms.html">перейти</a></td></tr>
-<tr><td colspan="2">Изображение внутри ячейки таблицы:</td><td><img src="images/cell.jpg" alt="Чашка кофе в ячейке" width="120" height="80"></td></tr>
-</table>
-<div class="pagenav"><a href="#sec1">↑ Раздел 1</a> | <a href="#top">К началу ↑</a></div>
+// Действие 2: «Отправить» — отправляем на сервер только после получения результата
+function send() {
+  if (!verify() || resultInput.value === NOT_DEFINED) return;
+  form.submit();
+}
 
-</main>
-<footer>Учебный сайт «Зерно» · контрольная работа по программированию · 2026</footer>
-</body>
-</html>
+document.getElementById('verify').addEventListener('click', verify);
+document.getElementById('send').addEventListener('click', send);
